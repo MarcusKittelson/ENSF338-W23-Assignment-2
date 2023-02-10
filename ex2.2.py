@@ -33,22 +33,20 @@ with open("ex2.json") as InFile:
     data = json.load(InFile)
 
 times = list()
+list_size = list()
 
 for arr in data:
-    print(len(arr))
     start = time.time()
-    print("*")
     func1(arr, 0, len(arr) - 1)
-    print("*")
     end = time.time()
-    print(end-start)
+    list_size.append(len(arr))
     times.append(end-start)
 
 print(times)
 
-plt.plot(times, label='Original')
-plt.xlabel('Input Into Function')
+plt.plot(list_size, times, label='Quicksort')
+plt.xlabel('Size of Array')
 plt.ylabel('Time (Seconds)')
-plt.title('Original Vs Improved Fibonacci Sequence Functions')
+plt.title('Quick Sort On Different Size Arrays')
 plt.legend()
 plt.show()
