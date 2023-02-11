@@ -37,12 +37,13 @@ list_size = list()
 
 for arr in data:
     start = time.time()
-    func1(arr, 0, len(arr) - 1)
+    sorted_data = func1(arr, 0, len(arr) - 1)
     end = time.time()
     list_size.append(len(arr))
     times.append(end-start)
 
-print(times)
+with open('ex2.5', 'w') as f:
+    json.dump(sorted_data, f)
 
 plt.plot(list_size, times, label='Quicksort')
 plt.xlabel('Size of Array')
