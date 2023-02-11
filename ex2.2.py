@@ -37,12 +37,12 @@ list_size = list()
 
 for arr in data:
     start = time.time()
-    arr = func1(arr, 0, len(arr) - 1)
+    func1(arr, 0, len(arr) - 1)
     end = time.time()
     list_size.append(len(arr))
     times.append(end-start)
 
-with open('ex2.5', 'w') as outFile:
+with open('ex2.5.json', 'w') as outFile:
     json.dump(data, outFile)
 
 plt.plot(list_size, times, label='Quicksort')
