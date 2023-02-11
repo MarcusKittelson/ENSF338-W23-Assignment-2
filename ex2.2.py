@@ -29,7 +29,7 @@ def func2(array, start, end):
     array[start], array[high] = array[high], array[start]
     return high
 
-with open("ex2.json") as InFile:
+with open("ex2.5.json") as InFile:
     data = json.load(InFile)
 
 times = list()
