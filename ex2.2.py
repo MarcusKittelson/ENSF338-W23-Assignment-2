@@ -29,7 +29,7 @@ def func2(array, start, end):
     array[start], array[high] = array[high], array[start]
     return high
 
-with open("ex2.5.json") as InFile:
+with open("ex2.json") as InFile:
     data = json.load(InFile)
 
 times = list()
@@ -42,8 +42,6 @@ for arr in data:
     list_size.append(len(arr))
     times.append(end-start)
 
-with open('ex2.5.json', 'w') as outFile:
-    json.dump(data, outFile)
 
 plt.plot(list_size, times, label='Quicksort')
 plt.xlabel('Size of Array')
