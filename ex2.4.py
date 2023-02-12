@@ -14,7 +14,7 @@ def func1(arr, low, high):
         func1(arr, pi + 1, high)
 
 def func2(array, start, end):
-    pivot_index = (end - start) / 2
+    pivot_index = (end - start) // 2
     p = array[pivot_index]
     low = start + 1
     high = end
